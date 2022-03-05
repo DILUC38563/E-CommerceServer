@@ -14,6 +14,7 @@ import paymentRoute from "./routes/stripePayment.js";
 
 const app = express();
 dotenv.config();
+app.use(cors());
 
 const PORT = process.env.PORT;
 const URL = process.env.URL;
@@ -31,7 +32,7 @@ app.get("/", (req, res) => {
   res.send("Welcome");
 });
 
-app.use(cors());
+
 app.use(express.json());
 app.use("/user", userRoute);
 app.use("/auth", authRoute);
