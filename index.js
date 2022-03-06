@@ -32,7 +32,6 @@ app.get("/", (req, res) => {
   res.send("Welcome");
 });
 
-
 app.use(express.json());
 app.use("/user", userRoute);
 app.use("/auth", authRoute);
